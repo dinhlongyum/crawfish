@@ -1,0 +1,52 @@
+.home-1
+	.swiper-container
+		max-height: 100vh
+		display: flex
+		height: 100%
+		.swiper-slide
+			img
+				width: 100%
+				height: 100%
+				object-fit: cover
+				min-height: 200px
+		.swiper-navigation
+			+pos(abs, null 0 0 null)
+			z-index: 33
+			display: flex
+			.swiper-btn
+				width: 65px
+				height: 65px
+				+fz(2rem)
+				color: #fff
+				+flex-center()
+				background: $main
+				+ .swiper-btn
+					margin-left: 5px
+	.content-wrapper
+		+pad(1rem)
+		.logo
+			text-align: center
+			img
+				max-width: 210px
+		.text
+			margin-top: r(32px)
+		.viewMore
+			a
+				text-decoration: none
+				position: relative
+				color: #003333
+				z-index: 2
+				&:before
+					content: ''
+					width: 75%
+					height: 7px
+					background: $main
+					+pos(abs, null null 0 0)
+					z-index: -1
+	+media-breakpoint-up(lg)
+		.content-wrapper
+			height: 100%
+			display: flex
+			flex-direction: column
+			+pad(r(50px))
+			justify-content: center

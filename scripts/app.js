@@ -35,7 +35,7 @@ const app = {
     },
     bgImg: () => {
         let a = app.selectAll('[bg-img]')
-        for (i = 0; i < a.length; i++) {
+        for (let i = 0; i < a.length; i++) {
             let el = a[i],
                 bgimg = el.getAttribute('bg-img'),
                 pos = el.getAttribute('bg-pos'),

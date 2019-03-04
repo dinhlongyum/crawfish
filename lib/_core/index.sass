@@ -3,8 +3,20 @@ html, body
 	background: #fff
 	line-height: 1.5
 	margin: 0
-	font-family: 'Montserrat', sans-serif
-	font-weight: 500
+	font-family: 'Open Sans', sans-serif
+	font-weight: 400
 	color: #333333
+	// +media-breakpoint-up(lg)
+	// 	+fz(20px)
 img
 	max-width: 100%
+.cf-container
+	max-width: 100%
+	+pad(null 15px)
+	width: 100%
+	position: relative
+	&.no-gut
+		+pad(0)
+	+media-breakpoint-up(md)
+		+mar(null 5rem)
+		max-width: calc(100% - 10rem)
