@@ -1,9 +1,12 @@
 .home-2
 	background: $extra
 	color: #fff
+	img
+		width: 100%
 	.title
-		width: 285px
-		height: 160px
+		margin-bottom: 2rem
+		display: inline-flex
+		+pad(1rem)
 		position: relative
 		&:before
 			content: ''
@@ -13,16 +16,42 @@
 			opacity: .5
 			+pos(abs, 0 null null 0)
 		.sec-num
-			+pos(abs,null null -17px -48px)
+			// +pos(abs,null null -17px -48px)
+			+pos(abs,null null -43px -25px)
 			span
-				+fz(r(150px))
+				// +fz(r(150px))
+				+fz(5rem)
 				+lh(r(150px))
 				+fw(800)
 				opacity: .25
 		h2
-			+fz(r(72px))
+			// +fz(r(72px))
+			+fz(2rem)
+			padding-left: 50%
 			text-transform: uppercase
 			z-index: 10
 			+fw(700)
-			+pos(abs, 50% null null 50%)
-			transform: translateY(-50%)
+			+lh(1)
+			margin: 0
+			// +pos(abs, 50% null null 50%)
+			// transform: translateY(-50%)
+	+media-breakpoint-up(md)
+		.text-wrapper
+			p
+				margin-bottom: 0
+		.title
+			+pad(2rem)
+			.sec-num
+				+pos(abs,null null -27px -35px)
+				span
+					+fz(r(120px))
+			h2
+				+fz(r(46px))
+	+media-breakpoint-up(lg)
+		.title
+			.sec-num
+				+pos(abs,null null -17px -48px)
+				span
+					+fz(r(150px))
+			h2
+				+fz(r(72px))
