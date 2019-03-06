@@ -1,0 +1,137 @@
+.cfh-header
+	+pos(fixed, 0 null null 0)
+	width: 100%
+	z-index: 33
+	background: #fff
+	.header-wrapper
+		box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35)
+		display: flex
+		+pad(r(10px) null)
+		z-index: 35
+		position: relative
+		.top-wrapper
+			position: relative
+		.header-logo
+			margin-right: auto
+			img
+				max-width: 150px
+		.header-button
+			display: flex
+			user-select: none
+			cursor: pointer
+			align-items: center
+			+pos(abs, 50% 0 null null)
+			transform: translateY(-50%)
+			color: $extra
+			span
+				text-transform: uppercase
+				+fz(r(14px))
+			.toggle-button
+				margin-left: r(5px)
+				// width: 2rem
+				// height: 2rem
+				+flex-center()
+				.button
+					height: 1px
+					width: 10px
+					background: $extra
+					position: relative
+					transition: all 0ms 300ms
+					&:after
+						content: ""
+						position: absolute
+						left: 0
+						width: 100%
+						height: 100%
+						bottom: 3px
+						background: $extra
+						transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+					&:before
+						content: ""
+						position: absolute
+						left: 0
+						width: 100%
+						height: 100%
+						top: 3px
+						background: $extra
+						transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1)
+				&.active
+					.button
+						background: transparent
+						&:before
+							top: 0
+							transform: rotate(45deg)
+							transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+						&:after
+							bottom: 0
+							transform: rotate(-45deg)
+							transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1)
+	.backdrop
+		width: 100%
+		height: 100%
+		background: #000000
+		opacity: .8
+		z-index: 32
+		+pos(fixed, 70px null null 100%)
+		+tran(.5s)
+	.main-nav
+		display: flex
+		+pos(fixed,70px -100% null null)
+		height: 100%
+		min-width: 300px
+		background: #fff
+		+tran(.5s)
+		+pad(1.5rem)
+		z-index: 33
+		.logo
+			flex-grow: 1
+			display: none
+			flex-basis: 0
+		ul
+			flex-grow: 1
+			flex-basis: 0
+			list-style: none
+			padding-left: 0
+			li
+				+animate()
+				a
+					display: inline-block
+					+pad(r(15px) null)
+					position: relative
+					+fz(r(20px))
+					text-transform: uppercase
+					color: $extra
+					+lh(1)
+					text-decoration: none
+				&.active, &:hover
+					a
+						&:before
+							content: ''
+							background: $main
+							opacity: .4
+							height: 7px
+							width: 80%
+							+pos(abs, null 0 r(15px) null)
+
+	&.active
+		.backdrop
+			left: 0
+		.main-nav
+			right: 0
+			transition-delay: .2s
+			ul
+				li
+					+animateActive()
+	+media-breakpoint-up(lg)
+		.main-nav
+			+pad(null 5rem)
+			.logo
+				cursor: pointer
+				+pad(r(10px))
+				display: block
+				img
+					max-width: 250px
+			ul
+				width: 250px
+				li
+					text-align: right

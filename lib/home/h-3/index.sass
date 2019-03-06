@@ -1,0 +1,38 @@
+.cfh-home-3
+	.cfh-title
+		margin-bottom: 0
+		&:before
+			opacity: 1
+			background: $main
+		.sec-num
+			span
+				color: #fff
+		h2
+			background: linear-gradient(to right, #fff 0%, #fff calc(50% + 1rem), $main 50%)
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+	.main-wrapper
+		+pad(2rem null)
+		.item
+			+ .item
+				margin-top: 2rem
+			figure
+				margin-bottom: 
+				text-align: center
+				+pad(null 1rem)
+				figcaption
+					padding-top: 2rem
+	+media-breakpoint-up(md)
+		.cfh-title
+			h2
+				background: linear-gradient(to right, #fff 0%, #fff calc(50% + 2rem), $main 50%)
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+		.main-wrapper
+			+pad(r(60px) null)
+			.item
+				+ .item
+					margin-top: 0
+	+media-breakpoint-up(lg)
+		.main-wrapper
+			+pad(r(100px) null)
